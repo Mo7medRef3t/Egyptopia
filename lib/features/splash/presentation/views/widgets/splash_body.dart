@@ -15,7 +15,11 @@ class _SplashBodyState extends State<SplashBody>
     with SingleTickerProviderStateMixin {
   late final AnimationController _animationController;
   late final Animation<double> fadeAnimation;
+<<<<<<< HEAD
   late final Animation<double> scaleAnimation;
+=======
+  late final Animation<double> rotateAnimation;
+>>>>>>> feature/my-new-work
 
   @override
   void initState() {
@@ -26,10 +30,21 @@ class _SplashBodyState extends State<SplashBody>
 
   void _initAnimations() {
     _animationController = AnimationController(
+<<<<<<< HEAD
       vsync: this,duration: const Duration(milliseconds: 700),
     )..repeat(reverse: true);
     fadeAnimation = Tween<double>(begin: 0.2, end: 1).animate(_animationController);
     scaleAnimation = Tween<double>(begin: 0.9, end: 1.1).animate(
+=======
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    )..repeat(reverse: true);
+
+    fadeAnimation =
+        Tween<double>(begin: 0.2, end: 1).animate(_animationController);
+
+    rotateAnimation = Tween<double>(begin: -0.1, end: 0.1).animate(
+>>>>>>> feature/my-new-work
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
   }
@@ -43,6 +58,7 @@ class _SplashBodyState extends State<SplashBody>
   @override
   Widget build(BuildContext context) {
     return Stack(
+<<<<<<< HEAD
       children:[ Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -82,6 +98,47 @@ class _SplashBodyState extends State<SplashBody>
   void goNextPage() {
     Future.delayed(const Duration(seconds: 4), () {
       // ignore: use_build_context_synchronously
+=======
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RotationTransition(
+              turns: rotateAnimation,
+              child: Image.asset(
+                AssetsData.logo,
+                height: SizeConfig.defaultSize! * 13,
+              ),
+            ),
+            Center(
+              child: FadeTransition(
+                opacity: fadeAnimation,
+                child: Text(
+                  "Egyptopia",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: SizeConfig.defaultSize! * 4.8,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Image.asset(AssetsData.vectors),
+        ),
+      ],
+    );
+  }
+
+  void goNextPage() {
+    Future.delayed(const Duration(seconds: 4), () {
+>>>>>>> feature/my-new-work
       GoRouter.of(context).pushReplacement(AppRouter.kOnBordingView);
     });
   }
