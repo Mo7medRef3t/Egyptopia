@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:egyptopia/core/utils/assets.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/constants.dart';
 import 'package:egyptopia/core/widgets/custom_buttons.dart';
 import 'package:go_router/go_router.dart';
->>>>>>> feature/my-new-work
 
 class Auth extends StatelessWidget {
   const Auth({super.key});
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return const Scaffold(
-      body: Center(child: Text("Skip For Now")),
-    );
-  }
-}
-=======
+
     SizeConfig().init(context);
     return Scaffold(
       body: Stack(
@@ -168,4 +160,3 @@ class BottomLeftCurveClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
->>>>>>> feature/my-new-work
