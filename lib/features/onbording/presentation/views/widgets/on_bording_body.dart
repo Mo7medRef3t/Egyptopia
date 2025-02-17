@@ -1,3 +1,4 @@
+import 'package:egyptopia/core/utils/app_router.dart';
 import 'package:egyptopia/core/utils/assets.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/widgets/custom_buttons.dart';
@@ -57,7 +58,7 @@ class _OnBordingBodyState extends State<OnBordingBody> {
                       curve: Curves.easeOutBack,
                     );
                   }else{
-                    GoRouter.of(context).pushReplacement('/auth');
+                    GoRouter.of(context).pushReplacement(AppRouter.kRegistrationView);
 
                   }
                 },

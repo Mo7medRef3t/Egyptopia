@@ -88,6 +88,7 @@ class _SplashBodyState extends State<SplashBody>
 
   void goNextPage() {
     Future.delayed(const Duration(seconds: 4), () {
+      // ignore: use_build_context_synchronously
       GoRouter.of(context).pushReplacement(AppRouter.kOnBordingView);
     });
   }
