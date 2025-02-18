@@ -84,7 +84,8 @@ class SignUpBody extends StatelessWidget {
                       ))
                     ],
                   ),
-                  const CustomInputField(label: "Gendr", hint: "Select Gender",isDropdown: true),
+                  const VerticalSpace(1.5),
+                  const CustomInputField(label: "Gender", hint: "Select Gender",isDropdown: true),
                   const VerticalSpace(2),
                   CustomGeneralButton(
                     text: "Sign up",

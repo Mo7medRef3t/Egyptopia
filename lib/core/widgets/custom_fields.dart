@@ -106,6 +106,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
         );
       },
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.all(SizeConfig.defaultSize! * 1.4),
         decoration: BoxDecoration(
           color: Colors.grey[200],
@@ -138,6 +139,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
         }
       },
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.all(SizeConfig.defaultSize! * 1.4),
         decoration: BoxDecoration(
           color: Colors.grey[200],
