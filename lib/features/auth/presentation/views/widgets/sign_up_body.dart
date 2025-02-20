@@ -85,7 +85,8 @@ class SignUpBody extends StatelessWidget {
                     ],
                   ),
                   const VerticalSpace(1.5),
-                  const CustomInputField(label: "Gender", hint: "Select Gender",isDropdown: true),
+                  const CustomInputField(
+                      label: "Gender", hint: "Select Gender", isDropdown: true),
                   const VerticalSpace(2),
                   CustomGeneralButton(
                     text: "Sign up",
@@ -125,21 +126,22 @@ class SignUpBody extends StatelessWidget {
                     children: [
                       BuildSocialIcon(
                           assetPath: AssetsData.fblogo,
-                          size: SizeConfig.defaultSize! * 4),
+                          size: SizeConfig.defaultSize! * 3),
                       const HorizantalSpace(2),
                       BuildSocialIcon(
                           assetPath: AssetsData.google,
-                          size: SizeConfig.defaultSize! * 4),
+                          size: SizeConfig.defaultSize! * 3),
                       const HorizantalSpace(2),
                       BuildSocialIcon(
-                          assetPath: AssetsData.twitter,
-                          size: SizeConfig.defaultSize! * 4),
+                          assetPath: AssetsData.insta,
+                          size: SizeConfig.defaultSize! * 3),
                     ],
                   ),
                   const VerticalSpace(1.5),
                   Center(
                     child: GestureDetector(
-                      onTap: () => GoRouter.of(context).pushReplacement(AppRouter.kSignIn),
+                      onTap: () => GoRouter.of(context)
+                          .pushReplacement(AppRouter.kSignIn),
                       child: RichText(
                         text: TextSpan(
                           text: "Already have an account? ",

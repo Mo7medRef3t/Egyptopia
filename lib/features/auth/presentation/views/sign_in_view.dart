@@ -12,8 +12,10 @@ class SignInView extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 0,left: 0,right: 0,
-            height: SizeConfig.screenHeight! * 0.35, 
+            top: 0,
+            left: 0,
+            right: 0,
+            height: SizeConfig.screenHeight! * 0.35,
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -23,7 +25,8 @@ class SignInView extends StatelessWidget {
                 ),
               ),
             ),
-          ), Positioned(
+          ),
+          Positioned(
             left: SizeConfig.defaultSize!,
             top: SizeConfig.defaultSize! * 2,
             child: IconButton(
@@ -33,11 +36,9 @@ class SignInView extends StatelessWidget {
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
-                )
-                ),
-                ),
+                )),
+          ),
           const SignInBody(),
-        
         ],
       ),
     );

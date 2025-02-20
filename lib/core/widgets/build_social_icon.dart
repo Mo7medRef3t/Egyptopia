@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BuildSocialIcon extends StatelessWidget {
-  const BuildSocialIcon({super.key, required this.assetPath, required this.size});
+  const BuildSocialIcon(
+      {super.key, required this.assetPath, required this.size});
   final String assetPath;
   final double size;
 

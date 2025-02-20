@@ -12,12 +12,11 @@ abstract class AppRouter {
   static const kSignUp = '/signup';
   static const kSignIn = '/signin';
 
-
-
   static final router = GoRouter(routes: [
     GoRoute(path: '/', builder: (context, state) => const SplashView()),
-    GoRoute(path: kRegistrationView, builder: (context, state) => const RegistrationView()),
-
+    GoRoute(
+        path: kRegistrationView,
+        builder: (context, state) => const RegistrationView()),
     GoRoute(path: kSignUp, builder: (context, state) => const SignUpView()),
     GoRoute(path: kSignIn, builder: (context, state) => const SignInView()),
     GoRoute(

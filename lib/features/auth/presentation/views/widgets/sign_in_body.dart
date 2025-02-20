@@ -33,7 +33,9 @@ class SignInBody extends StatelessWidget {
           ),
           const VerticalSpace(1),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize!,vertical: SizeConfig.defaultSize! * 2),
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.defaultSize!,
+                  vertical: SizeConfig.defaultSize! * 2),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius:
@@ -93,7 +95,7 @@ class SignInBody extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal:8),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text(
                             "OR",
                             style: GoogleFonts.inter(
@@ -117,21 +119,22 @@ class SignInBody extends StatelessWidget {
                       children: [
                         BuildSocialIcon(
                             assetPath: AssetsData.fblogo,
-                            size: SizeConfig.defaultSize! * 4),
+                            size: SizeConfig.defaultSize! * 3),
                         const HorizantalSpace(2),
                         BuildSocialIcon(
                             assetPath: AssetsData.google,
-                            size: SizeConfig.defaultSize! * 4),
+                            size: SizeConfig.defaultSize! * 3),
                         const HorizantalSpace(2),
                         BuildSocialIcon(
-                            assetPath: AssetsData.twitter,
-                            size: SizeConfig.defaultSize! * 4),
+                            assetPath: AssetsData.insta,
+                            size: SizeConfig.defaultSize! * 3),
                       ],
                     ),
                     const VerticalSpace(1.5),
                     Center(
                       child: GestureDetector(
-                        onTap: () => GoRouter.of(context).pushReplacement(AppRouter.kSignUp),
+                        onTap: () => GoRouter.of(context)
+                            .pushReplacement(AppRouter.kSignUp),
                         child: RichText(
                           text: TextSpan(
                             text: "Don't have an account? ",
