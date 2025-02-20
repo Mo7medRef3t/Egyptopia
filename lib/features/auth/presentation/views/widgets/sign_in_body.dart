@@ -73,7 +73,9 @@ class SignInBody extends StatelessWidget {
                     SizedBox(height: SizeConfig.defaultSize!),
                     Center(
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.kForgetPassword);
+                        },
                         child: Text(
                           "Forgot password?",
                           style: GoogleFonts.inter(

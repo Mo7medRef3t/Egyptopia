@@ -9,12 +9,14 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           Positioned(
-            top: 0,left: 0,right: 0,
-            height: SizeConfig.screenHeight! * 0.35, 
+            top: 0,
+            left: 0,
+            right: 0,
+            height: SizeConfig.screenHeight! * 0.35,
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -24,21 +26,19 @@ class SignUpView extends StatelessWidget {
                 ),
               ),
             ),
-          ), Positioned(
+          ),
+          Positioned(
             left: SizeConfig.defaultSize!,
             top: SizeConfig.defaultSize! * 2,
             child: IconButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                icon: const Icon(
-                  Icons.arrow_back_ios,
+                icon: const BackButton(
                   color: Colors.white,
-                )
-                ),
-                ),
+                )),
+          ),
           const SignUpBody(),
-        
         ],
       ),
     );

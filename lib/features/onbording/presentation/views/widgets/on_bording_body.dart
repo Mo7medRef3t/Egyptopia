@@ -1,5 +1,4 @@
 import 'package:egyptopia/core/utils/app_router.dart';
-import 'package:egyptopia/core/utils/assets.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/widgets/custom_buttons.dart';
 import 'package:egyptopia/core/widgets/custom_indicator.dart';
@@ -57,9 +56,9 @@ class _OnBordingBodyState extends State<OnBordingBody> {
                       duration: const Duration(milliseconds: 600),
                       curve: Curves.easeOutBack,
                     );
-                  }else{
-                    GoRouter.of(context).pushReplacement(AppRouter.kRegistrationView);
-
+                  } else {
+                    GoRouter.of(context)
+                        .pushReplacement(AppRouter.kRegistrationView);
                   }
                 },
                 text: pageController!.hasClients
@@ -88,8 +87,6 @@ class _OnBordingBodyState extends State<OnBordingBody> {
             ],
           ),
         ),
-        Positioned(
-            top: 0, right: 0, left: 0, child: Image.asset(AssetsData.vectors)),
         Positioned(
           top: SizeConfig.defaultSize! * 2.5,
           right: SizeConfig.defaultSize! * 3.5,

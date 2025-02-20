@@ -1,3 +1,4 @@
+import 'package:egyptopia/features/auth/presentation/views/widgets/forget_password.dart';
 import 'package:egyptopia/features/auth/presentation/views/registration_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_in_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_up_view.dart';
@@ -11,6 +12,7 @@ abstract class AppRouter {
   static const kRegistrationView = '/registrationView';
   static const kSignUp = '/signup';
   static const kSignIn = '/signin';
+  static const kForgetPassword = '/forgetPassword';
 
   static final router = GoRouter(routes: [
     GoRoute(path: '/', builder: (context, state) => const SplashView()),
@@ -19,6 +21,7 @@ abstract class AppRouter {
         builder: (context, state) => const RegistrationView()),
     GoRoute(path: kSignUp, builder: (context, state) => const SignUpView()),
     GoRoute(path: kSignIn, builder: (context, state) => const SignInView()),
+    GoRoute(path: kForgetPassword, builder: (context, state) => const ForgetPassword()),
     GoRoute(
       path: kOnBordingView,
       pageBuilder: (context, state) => CustomTransitionPage(
