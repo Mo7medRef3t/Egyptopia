@@ -31,12 +31,11 @@ class SignUpView extends StatelessWidget {
             left: SizeConfig.defaultSize!,
             top: SizeConfig.defaultSize! * 2,
             child: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const BackButton(
-                  color: Colors.white,
-                )),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+            ),
           ),
           const SignUpBody(),
         ],

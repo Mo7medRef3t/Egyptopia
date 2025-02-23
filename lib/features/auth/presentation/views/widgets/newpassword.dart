@@ -1,15 +1,18 @@
+// import 'package:egyptopia/core/utils/app_router.dart';
+import 'package:egyptopia/core/utils/app_router.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/widgets/custom_fields.dart';
 import 'package:egyptopia/core/widgets/reusable_screen.dart';
 import 'package:egyptopia/core/widgets/space_widget.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/newpassword.dart';
+import 'package:egyptopia/core/widgets/custom_buttons.dart';
 import 'package:egyptopia/features/onbording/presentation/views/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
-import 'package:egyptopia/core/widgets/custom_buttons.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class CreateNewPassword extends StatelessWidget {
+  const CreateNewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,36 +23,42 @@ class ForgetPassword extends StatelessWidget {
             padding: EdgeInsets.all(SizeConfig.defaultSize! * 2),
             child: Column(
               children: [
-                const VerticalSpace(5),
+                const VerticalSpace(4),
                 Text(
-                  "Verify Your Email",
+                  "Create New Password",
                   style: GoogleFonts.imFellFrenchCanon(
                     fontSize: SizeConfig.defaultSize! * 3,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const VerticalSpace(3),
+                const VerticalSpace(2),
                 const PageViewItem(
-                  image: 'assets/images/forgot.png',
-                  title: 'Enter your email address',
-                  subTitle: 'We will verify this email is yours',
-                  titleFontSize: 27,
-                  subTitleFontSize: 17,
+                  image: 'assets/images/new1.png',
+                  title:
+                      'Your new password must be different\nfrom previously used password',
+                  subTitle: '',
+                  titleFontSize: 18,
+                  subTitleFontSize: 10,
                 ),
-                const VerticalSpace(3),
+                // const VerticalSpace(2),
                 const CustomInputField(
-                  label: "Email",
-                  hint: "Enter Your Email",
-                  inputType: TextInputType.emailAddress,
+                  label: "New Password",
+                  hint: "Enter Your New Password",
+                  inputType: TextInputType.visiblePassword,
+                  isPassword: true,
+                ),
+                const VerticalSpace(2),
+                const CustomInputField(
+                  label: "Confirm Password",
+                  hint: "Re-enter Your Password",
+                  inputType: TextInputType.visiblePassword,
+                  isPassword: true,
                 ),
                 const VerticalSpace(3),
                 CustomGeneralButton(
-                  text: "Send",
+                  text: "Confirm",
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => const CreateNewPassword()),
-                    );
+                    GoRouter.of(context).pushReplacement(AppRouter.kSignIn);
                   },
                 ),
               ],
@@ -57,7 +66,7 @@ class ForgetPassword extends StatelessWidget {
           ),
           Positioned(
             left: SizeConfig.defaultSize! * 1.1,
-            top: SizeConfig.defaultSize! * 2, // Same as your reference
+            top: SizeConfig.defaultSize! * 2, // Adjust based on your layout
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();

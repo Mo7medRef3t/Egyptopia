@@ -16,11 +16,11 @@ class RegistrationBody extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: SizeConfig.screenHeight! * 0.73, 
+          height: SizeConfig.screenHeight! * 0.73,
           child: ClipRRect(
-    borderRadius:  BorderRadius.only(
-      bottomLeft: Radius.circular(SizeConfig.defaultSize! * 14),
-    ),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(SizeConfig.defaultSize! * 14),
+            ),
             child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -36,9 +36,9 @@ class RegistrationBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             vertical: SizeConfig.defaultSize! * 2,
             horizontal: SizeConfig.defaultSize! * 3,
-          ), 
-         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
                 "Start Discovering Egypt Like Never Before",
@@ -56,7 +56,7 @@ class RegistrationBody extends StatelessWidget {
                     child: CustomGeneralButton(
                       text: "Sign up",
                       onTap: () {
-                      GoRouter.of(context).push(AppRouter.kSignUp);
+                        GoRouter.of(context).push(AppRouter.kSignUp);
                       },
                     ),
                   ),
@@ -73,7 +73,9 @@ class RegistrationBody extends StatelessWidget {
               ),
               const VerticalSpace(1),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).go(AppRouter.kHomePage);
+                },
                 child: Text(
                   "Skip for now",
                   style: GoogleFonts.inter(

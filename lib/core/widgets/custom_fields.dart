@@ -20,16 +20,24 @@ class CustomInputField extends StatefulWidget {
 
   const CustomInputField({
     super.key,
-    required this.label,required this.hint,
-    this.controller,this.inputType,
-    this.isPassword = false,this.isDropdown = false,
-    this.isDatePicker = false,this.isCountryPicker = false,
-    this.dropdownItems,this.onChanged,this.validator,this.onSaved,
+    required this.label,
+    required this.hint,
+    this.controller,
+    this.inputType,
+    this.isPassword = false,
+    this.isDropdown = false,
+    this.isDatePicker = false,
+    this.isCountryPicker = false,
+    this.dropdownItems,
+    this.onChanged,
+    this.validator,
+    this.onSaved,
   });
 
   @override
   State<CustomInputField> createState() => _CustomInputFieldState();
 }
+
 class _CustomInputFieldState extends State<CustomInputField> {
   bool _obscurePassword = true;
   String? _selectedValue;
@@ -55,6 +63,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
       ],
     );
   }
+
   Widget _buildTextField() {
     return TextFormField(
       controller: widget.controller,
@@ -75,6 +84,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
       ),
     );
   }
+
   Widget _buildDropdown() {
     return DropdownButtonFormField<String>(
       decoration: _inputDecoration(),
@@ -89,6 +99,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
       },
     );
   }
+
   Widget _buildCountryPicker() {
     return InkWell(
       onTap: () {
@@ -122,6 +133,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
       ),
     );
   }
+
   Widget _buildDatePicker() {
     return InkWell(
       onTap: () async {
@@ -155,6 +167,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
       ),
     );
   }
+
   InputDecoration _inputDecoration() {
     return InputDecoration(
       filled: true,

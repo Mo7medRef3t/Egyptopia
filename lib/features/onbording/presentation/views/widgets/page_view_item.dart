@@ -4,14 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem(
-      {super.key,
-      required this.image,
-      required this.title,
-      @required this.subTitle});
-  final String? image;
-  final String? title;
+  const PageViewItem({
+    super.key,
+    required this.image,
+    required this.title,
+    this.subTitle,
+    this.titleFontSize,
+    this.subTitleFontSize,
+  });
+
+  final String image;
+  final String title;
   final String? subTitle;
+  final double? titleFontSize;
+  final double? subTitleFontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +27,17 @@ class PageViewItem extends StatelessWidget {
           width: SizeConfig.defaultSize! * 25,
           height: SizeConfig.defaultSize! * 24,
           child: Image.asset(
-            image!,
+            image,
             fit: BoxFit.contain,
           ),
         ),
         const VerticalSpace(1),
         Text(
-          title!,
+          title,
+          textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: SizeConfig.defaultSize! * 3.5,
+            fontSize: titleFontSize ??
+                SizeConfig.defaultSize! * 3.5, // Use default if null
             color: Colors.black87,
           ),
         ),
@@ -39,7 +47,7 @@ class PageViewItem extends StatelessWidget {
           textAlign: TextAlign.center,
           style: GoogleFonts.inter(
             fontWeight: FontWeight.w300,
-            fontSize: SizeConfig.defaultSize! * 1.8,
+            fontSize: subTitleFontSize ?? SizeConfig.defaultSize! * 1.8,
             fontStyle: FontStyle.italic,
             color: const Color(0xFFABA0A0),
           ),
