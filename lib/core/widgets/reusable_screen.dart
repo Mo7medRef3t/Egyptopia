@@ -35,7 +35,7 @@ class ReusableScreen extends StatelessWidget {
                 top: 0,
                 right: 0,
                 left: 0,
-                child: Expanded(child: Image.asset(imageAsset!)),
+                child: Image.asset(imageAsset!),
               ),
             child,
           ],
