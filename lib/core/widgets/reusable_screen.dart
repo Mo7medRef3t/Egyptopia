@@ -12,7 +12,7 @@ class ReusableScreen extends StatelessWidget {
     super.key,
     required this.child,
     this.imageAsset = AssetsData.vectors,
-    this.backgroundColor = kSecondaryColor,
+    this.backgroundColor = konBordingColor,
     this.gradientStops,
   });
 
@@ -25,7 +25,7 @@ class ReusableScreen extends StatelessWidget {
             colors: backgroundColor!,
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: gradientStops ?? [0, 0.45],
+            stops: gradientStops ?? [0, 0.6],
           ),
         ),
         child: Stack(
@@ -35,7 +35,7 @@ class ReusableScreen extends StatelessWidget {
                 top: 0,
                 right: 0,
                 left: 0,
-                child: Image.asset(imageAsset!),
+                child: Expanded(child: Image.asset(imageAsset!)),
               ),
             child,
           ],

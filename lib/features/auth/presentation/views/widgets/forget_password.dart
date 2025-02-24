@@ -1,11 +1,12 @@
+import 'package:egyptopia/core/utils/app_router.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/widgets/custom_fields.dart';
 import 'package:egyptopia/core/widgets/reusable_screen.dart';
 import 'package:egyptopia/core/widgets/space_widget.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/newpassword.dart';
 import 'package:egyptopia/features/onbording/presentation/views/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:egyptopia/core/widgets/custom_buttons.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -29,12 +30,12 @@ class ForgetPassword extends StatelessWidget {
                   ),
                 ),
                 const VerticalSpace(3),
-                const PageViewItem(
+                 PageViewItem(
                   image: 'assets/images/forgot.png',
                   title: 'Enter your email address',
                   subTitle: 'We will verify this email is yours',
-                  titleFontSize: 27,
-                  subTitleFontSize: 17,
+                  titleFontSize: SizeConfig.defaultSize! * 2.6,
+                  subTitleFontSize: SizeConfig.defaultSize! * 1.6,
                 ),
                 const VerticalSpace(3),
                 const CustomInputField(
@@ -46,10 +47,7 @@ class ForgetPassword extends StatelessWidget {
                 CustomGeneralButton(
                   text: "Send",
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => const CreateNewPassword()),
-                    );
+                    GoRouter.of(context).push(AppRouter.kCreateNewPassword);
                   },
                 ),
               ],
@@ -57,7 +55,7 @@ class ForgetPassword extends StatelessWidget {
           ),
           Positioned(
             left: SizeConfig.defaultSize! * 1.1,
-            top: SizeConfig.defaultSize! * 2, // Same as your reference
+            top: SizeConfig.defaultSize! * 2, 
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();

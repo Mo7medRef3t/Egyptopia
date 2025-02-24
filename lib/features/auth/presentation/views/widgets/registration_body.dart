@@ -74,7 +74,7 @@ class RegistrationBody extends StatelessWidget {
               const VerticalSpace(1),
               TextButton(
                 onPressed: () {
-                  GoRouter.of(context).go(AppRouter.kHomePage);
+                  GoRouter.of(context).go(AppRouter.kScreens);
                 },
                 child: Text(
                   "Skip for now",

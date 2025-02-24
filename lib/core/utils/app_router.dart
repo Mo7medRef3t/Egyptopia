@@ -1,15 +1,17 @@
-import 'package:egyptopia/features/auth/presentation/views/widgets/activities.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/events.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/food.dart';
+import 'package:egyptopia/features/z/activities.dart';
+import 'package:egyptopia/features/auth/presentation/views/widgets/create_new_password.dart';
+import 'package:egyptopia/features/z/events.dart';
+import 'package:egyptopia/features/z/food.dart';
 import 'package:egyptopia/features/auth/presentation/views/widgets/forget_password.dart';
 import 'package:egyptopia/features/auth/presentation/views/registration_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_in_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_up_view.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/home_body.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/quizzes.dart';
-import 'package:egyptopia/features/auth/presentation/views/widgets/places.dart';
+import 'package:egyptopia/features/home/presentation/views/widgets/home_body.dart';
+import 'package:egyptopia/features/z/quizzes.dart';
+import 'package:egyptopia/features/z/places.dart';
 import 'package:egyptopia/features/onbording/presentation/views/on_bording_view.dart';
 import 'package:egyptopia/features/splash/presentation/views/splash_view.dart';
+import 'package:egyptopia/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,6 +21,8 @@ abstract class AppRouter {
   static const kSignUp = '/signup';
   static const kSignIn = '/signin';
   static const kForgetPassword = '/forgetPassword';
+  static const kCreateNewPassword = '/createNewPassword';
+    static const kScreens = '/screens';
   static const kHomePage = '/home';
   static const kPlaces = '/places';
   static const kQuizzes = '/quizzes';
@@ -33,10 +37,10 @@ abstract class AppRouter {
         builder: (context, state) => const RegistrationView()),
     GoRoute(path: kSignUp, builder: (context, state) => const SignUpView()),
     GoRoute(path: kSignIn, builder: (context, state) => const SignInView()),
-    GoRoute(
-        path: kForgetPassword,
-        builder: (context, state) => const ForgetPassword()),
-    GoRoute(path: kHomePage, builder: (context, state) => const HomePage()),
+    GoRoute(path: kForgetPassword,builder: (context, state) => const ForgetPassword()),
+    GoRoute(path: kCreateNewPassword, builder: (context, state) => const CreateNewPassword()),
+    GoRoute(path: kScreens, builder: (context, state) => const Screens()),
+    GoRoute(path: kHomePage, builder: (context, state) => const HomeBody()),
     GoRoute(path: kPlaces, builder: (context, state) => const Places()),
     GoRoute(path: kQuizzes, builder: (context, state) => const Quizzes()),
     GoRoute(path: kEvents, builder: (context, state) => const Events()),

@@ -1,4 +1,3 @@
-// import 'package:egyptopia/core/utils/app_router.dart';
 import 'package:egyptopia/core/utils/app_router.dart';
 import 'package:egyptopia/core/utils/size_config.dart';
 import 'package:egyptopia/core/widgets/custom_fields.dart';
@@ -8,7 +7,6 @@ import 'package:egyptopia/core/widgets/custom_buttons.dart';
 import 'package:egyptopia/features/onbording/presentation/views/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-// import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateNewPassword extends StatelessWidget {
@@ -40,7 +38,6 @@ class CreateNewPassword extends StatelessWidget {
                   titleFontSize: 18,
                   subTitleFontSize: 10,
                 ),
-                // const VerticalSpace(2),
                 const CustomInputField(
                   label: "New Password",
                   hint: "Enter Your New Password",
@@ -54,19 +51,22 @@ class CreateNewPassword extends StatelessWidget {
                   inputType: TextInputType.visiblePassword,
                   isPassword: true,
                 ),
-                const VerticalSpace(3),
-                CustomGeneralButton(
-                  text: "Confirm",
-                  onTap: () {
-                    GoRouter.of(context).pushReplacement(AppRouter.kSignIn);
-                  },
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: CustomGeneralButton(
+                    text: "Confirm",
+                    onTap: () {
+                      GoRouter.of(context).pushReplacement(AppRouter.kSignIn);
+                    },
+                  ),
                 ),
               ],
             ),
           ),
           Positioned(
             left: SizeConfig.defaultSize! * 1.1,
-            top: SizeConfig.defaultSize! * 2, // Adjust based on your layout
+            top: SizeConfig.defaultSize! * 2,
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();

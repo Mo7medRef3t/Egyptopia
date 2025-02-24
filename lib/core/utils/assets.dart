@@ -11,4 +11,6 @@ class AssetsData {
   static const discover = 'assets/images/discover.png';
   static const fixedLogo = 'assets/images/fixed_logo.png';
   static const fixed = 'assets/images/fixed_logo2.png';
+  static const navBar = 'assets/images/Navbar.png';
+
 }

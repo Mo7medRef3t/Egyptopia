@@ -37,7 +37,7 @@ class PageViewItem extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: titleFontSize ??
-                SizeConfig.defaultSize! * 3.5, // Use default if null
+                SizeConfig.defaultSize! * 3.5, 
             color: Colors.black87,
           ),
         ),
