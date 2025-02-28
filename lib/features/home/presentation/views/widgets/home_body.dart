@@ -80,7 +80,9 @@ class HomeBody extends StatelessWidget {
               route: AppRouter.kEvents,
             ),
             BuildCategoryIcon(
-                icon: Icons.restaurant_menu, label: "Food", route: AppRouter.kFood),
+                icon: Icons.restaurant_menu,
+                label: "Food",
+                route: AppRouter.kFood),
             BuildCategoryIcon(
                 icon: Icons.directions_walk,
                 label: "Activities",
