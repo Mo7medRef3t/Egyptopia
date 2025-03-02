@@ -73,7 +73,7 @@ class HomeBody extends StatelessWidget {
             BuildCategoryIcon(
                 icon: Icons.quiz_rounded,
                 label: "Quizzes",
-                route: AppRouter.kQuizzes),
+                route: AppRouter.kQuizStart),
             BuildCategoryIcon(
               icon: Icons.event,
               label: "Events",

@@ -12,5 +12,6 @@ class AssetsData {
   static const fixedLogo = 'assets/images/fixed_logo.png';
   static const fixed = 'assets/images/fixed_logo2.png';
   static const navBar = 'assets/images/Navbar.png';
-
+  static const qMark = 'assets/images/QMark.png';
+  static const puzzle = 'assets/images/puzzle.png';
 }

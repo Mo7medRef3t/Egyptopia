@@ -1,3 +1,4 @@
+import 'package:egyptopia/features/home/presentation/views/home_view.dart';
 import 'package:egyptopia/features/z/activities.dart';
 import 'package:egyptopia/features/auth/presentation/views/widgets/create_new_password.dart';
 import 'package:egyptopia/features/z/events.dart';
@@ -6,11 +7,10 @@ import 'package:egyptopia/features/auth/presentation/views/widgets/forget_passwo
 import 'package:egyptopia/features/auth/presentation/views/registration_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_in_view.dart';
 import 'package:egyptopia/features/auth/presentation/views/sign_up_view.dart';
-import 'package:egyptopia/features/home/presentation/views/widgets/home_body.dart';
-import 'package:egyptopia/features/z/quiz_level.dart';
-import 'package:egyptopia/features/z/quiz_results.dart';
-import 'package:egyptopia/features/z/quiz_screen.dart';
-import 'package:egyptopia/features/z/quizzes.dart';
+import 'package:egyptopia/features/quizzes/quiz_levels.dart';
+import 'package:egyptopia/features/quizzes/quiz_results.dart';
+import 'package:egyptopia/features/quizzes/quiz_screen.dart';
+import 'package:egyptopia/features/quizzes/quiz_start.dart';
 import 'package:egyptopia/features/z/places.dart';
 import 'package:egyptopia/features/onbording/presentation/views/on_bording_view.dart';
 import 'package:egyptopia/features/splash/presentation/views/splash_view.dart';
@@ -28,7 +28,7 @@ abstract class AppRouter {
   static const kScreens = '/screens';
   static const kHomePage = '/home';
   static const kPlaces = '/places';
-  static const kQuizzes = '/quizzes';
+  static const kQuizStart = '/quizzes';
   static const kEvents = '/events';
   static const kFood = '/food';
   static const kActivities = '/activities';
@@ -49,9 +49,9 @@ abstract class AppRouter {
         path: kCreateNewPassword,
         builder: (context, state) => const CreateNewPassword()),
     GoRoute(path: kScreens, builder: (context, state) => const Screens()),
-    GoRoute(path: kHomePage, builder: (context, state) => const HomeBody()),
+    GoRoute(path: kHomePage, builder: (context, state) => const HomeView()),
     GoRoute(path: kPlaces, builder: (context, state) => const Places()),
-    GoRoute(path: kQuizzes, builder: (context, state) => const Quizzes()),
+    GoRoute(path: kQuizStart, builder: (context, state) => const QuizStart()),
     GoRoute(path: kEvents, builder: (context, state) => const Events()),
     GoRoute(path: kFood, builder: (context, state) => const Food()),
     GoRoute(path: kActivities, builder: (context, state) => const Activities()),
@@ -66,10 +66,12 @@ abstract class AppRouter {
     GoRoute(
       path: kQuizResults,
       builder: (context, state) {
-        final extra = state.extra as Map<String, dynamic>?;
-        int score = extra?['score'] ?? 0;
-        int totalQuestions = extra?['totalQuestions'] ?? 1;
-        return QuizResultsScreen(score: score, totalQuestions: totalQuestions);
+        final extra = state.extra as Map<String, dynamic>? ?? {};
+        return QuizResults(
+          score: extra['score'] ?? 0,
+          totalQuestions: extra['totalQuestions'] ?? 1,
+          wrongAnswers: extra['wrongAnswers'] ?? [],
+        );
       },
     ),
     GoRoute(

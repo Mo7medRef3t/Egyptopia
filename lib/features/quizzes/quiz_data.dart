@@ -1,5 +1,16 @@
-import 'package:egyptopia/features/z/question_model.dart';
+class Question {
+  final String question;
+  final List<String> options;
+  final int correctIndex;
+  final String imagePath;
 
+  Question({
+    required this.question,
+    required this.options,
+    required this.correctIndex,
+    required this.imagePath,
+  });
+}
 class QuizData {
   static final Map<String, List<Question>> questionsByLevel = {
     "beginner": [
